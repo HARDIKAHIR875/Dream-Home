@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DreamHomes Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">DreamHomes</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#properties">Properties</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Dream Home Awaits</h2>
+            <p>Discover stunning properties tailored to your needs.</p>
+            <button onclick="scrollToSection('properties')">Explore Listings</button>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At DreamHomes, we combine passion and expertise to help you find the property you’ve always dreamed of. Our dedicated team ensures a seamless buying or renting experience, tailored to your unique preferences.</p>
+        </div>
+    </section>
+
+    <section id="properties" class="properties">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <div class="property-list">
+                <div class="property">
+                    <img src="assets/images/uniqulagzary.jpeg" alt="Luxury Villa">
+                    <h3>Luxury Villa</h3>
+                    <p>$1,200,000</p>
+                    <button>View Details</button>
+                </div>
+                <div class="property">
+                    <img src="assets/images/farmbanglow.jpeg" alt="Modern Apartment">
+                    <h3>Modern Apartment</h3>
+                    <p>$850,000</p>
+                    <button>View Details</button>
+                </div>
+                <div class="property">
+                    <img src="assets/images/penthouse.jpg" alt="Cozy Bungalow">
+                    <h3>Cozy Bungalow</h3>
+                    <p>$550,000</p>
+                    <button>View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-list">
+                <div class="testimonial">
+                    <p>“DreamHomes made buying our first home an unforgettable experience. Their team was attentive, professional, and supportive every step of the way!”</p>
+                    <h4>- Sarah & John</h4>
+                </div>
+                <div class="testimonial">
+                    <p>“The variety of properties they offer is unmatched. I found my dream apartment in no time thanks to DreamHomes!”</p>
+                    <h4>- Emily R.</h4>
+                </div>
+                <div class="testimonial">
+                    <p>“Seamless, transparent, and hassle-free. I highly recommend DreamHomes for anyone looking for a property.”</p>
+                    <h4>- Michael B.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DreamHomes. All rights reserved. | Designed By Hardik Hadiya</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling to sections
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Contact form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: hwb(0 20% 80%);
+            color: #fff;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .hero {
+            background: url('assets/images/background.webp') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero button {
+            background: #007BFF;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        .about, .properties, .testimonials, .contact {
+            padding: 3rem 0;
+        }
+
+        .property-list {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .property {
+            background: #fff;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            flex: 1 1 calc(33.333% - 1.5rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .property img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials {
+            background: #007BFF;
+            color: #fff;
+        }
+
+        .testimonial {
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        form label {
+            display: block;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        form button {
+            margin-top: 1rem;
+            background: #007BFF;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @media (max-width:1199px){
+                    .container{
+                        width: 90%;
+                      max-width: 1200px;
+                     margin: 0 auto;
+                    }
+
+                    .property img {
+                      max-width: 100%;
+
+                    }
+                    form input, form textarea {
+                        width: 100%;
+                    }
+                
+        }
+
+        @media (max-width:991px){
+
+            .container{
+                        width: 90%;
+                      max-width: 1200px;
+                     margin: 0 auto;
+                    }
+
+                    .property img {
+                      max-width: 100%;
+
+                    }
+                    form input, form textarea {
+                        width: 100%;
+                    }
+
+        }
+
+
+
+
+        @media (max-width:767px){
+                       
+            header{
+                
+                width: 100%;
+            }
+
+                  .hero{
+                    
+                    width: 100%;
+                    background-position: right;
+                    
+                 }
+                 nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li{
+            font-size: small;
+            margin: 0 0;
+        }
+        nav ul li a {
+            font-size: 0.7rem;
+        }
+                 .testimonials{
+                    margin: 0 auto;
+                    width: 90%;
+                 }
+
+                 form input{
+                    width: 100%;
+                    height: 50px;
+                 }
+                  form textarea {
+                    width: 100%;
+                
+                 }
+
+                 footer{
+                    width: 100%;
+                 }
+
+                 .about{
+                    width: 100%;
+                 }
+
+                 
+
+                 .properties .property-list {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                 }
+
+                 .property img{
+                    width: 600px;
+                 }
+
+
+                 
+
+               
+
+        }
+
+        
+
+        
+
+
+    </style>
+</body>
+</html>
